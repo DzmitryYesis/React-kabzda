@@ -1,0 +1,21 @@
+.all {
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.inp{
+    margin: 12px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.but{
+    height: 50px;
+    margin: 1px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
