@@ -33,6 +33,7 @@ function ContrOnOff({on,setSwet,...props}: OnOffType) {
         marginLeft: '5px',
         background: on ? 'green' : 'red'
     }
+
     console.log("ContrOnnOff")
     return (
         <div>
