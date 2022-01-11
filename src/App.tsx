@@ -8,6 +8,17 @@ import UncontrolledRating from './components/Rating/uncontrolledRating';
 import ControledOnOff from './components/OnOff/ControledOnOff';
 import {Counter} from './components/Counter/Counter';
 
+export type TitleProps={
+    title:string
+    value:any
+}
+
+
+let items:Array<TitleProps> = [
+    {title:'Red', value:1},
+    {title:'White', value:2},
+    {title:'Pink', value:3}
+]
 
 function App() {
     console.log('App rendering')
@@ -19,16 +30,16 @@ function App() {
     return (
         <div>
             <OnOff/>
-            <ControledOnOff on={swet} setSwet={()=>setSwet(!swet)}/>
+            <ControledOnOff on={swet} setSwet={() => setSwet(!swet)}/>
             {/*<UncontrolledAccordion titleValue={'Vine menu'}  />*/}
             {/*<UncontrolledAccordion titleValue={'Vodochka menu'}  />*/}
-            <UncontrolledRating />
+            <UncontrolledRating/>
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
             <Rating value={value} setValue={setValue}/>
-            <Accordion titleValue={'Vine menu'} collapsed={collapsed} setCollapsed={setCollapsed}/>
-            <Accordion titleValue={'Vodochka menu'} collapsed={collapsed} setCollapsed={setCollapsed}/>
-            <Counter/>
+            <Accordion titleValue={'Vine menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>
+            <Accordion titleValue={'Vodochka menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>
+            {/*<Counter/>*/}
         </div>
     );
 }

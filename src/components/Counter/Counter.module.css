@@ -7,6 +7,9 @@
 }
 
 .inp{
+    width: border-box;
+    height: 40px;
+    font-size: 20px;
     margin: 12px;
     text-align: center;
     border: 2px solid black;

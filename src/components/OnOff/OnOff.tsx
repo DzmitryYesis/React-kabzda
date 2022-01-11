@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {log} from 'util';
 
 function OnOff() {
 
@@ -33,7 +34,7 @@ function OnOff() {
 
     const onClickHandler = () => setOn(true)
     const OffClickHandler = () => setOn(false)
-
+    console.log('OnOff')
     return (
         <div>
             <div style={onStyle} onClick={onClickHandler}>
@@ -47,4 +48,4 @@ function OnOff() {
     )
 }
 
-export default OnOff
+export default React.memo(OnOff)

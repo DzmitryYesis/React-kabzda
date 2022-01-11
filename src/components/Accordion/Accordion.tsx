@@ -1,17 +1,18 @@
 import React from "react";
-
+import {TitleProps} from '../../App';
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
     setCollapsed:(collapsed: boolean)=>void
+    items:Array<TitleProps>
 }
 
-function Accordion(props: AccordionPropsType) {
+function Accordion({titleValue, collapsed, setCollapsed, items,...props}: AccordionPropsType) {
     console.log('Accordion rendering')
         return (
             <div>
-                <AccordionTitle title={props.titleValue} setCollapsed={()=>props.setCollapsed(!props.collapsed)}/>
-                { !props.collapsed && <AccordionBody/>}
+                <AccordionTitle title={titleValue} setCollapsed={()=>setCollapsed(!collapsed)}/>
+                { !collapsed && <AccordionBody items={items}/>}
             </div>
         )
     }
@@ -30,17 +31,20 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     )
 }
 
-function AccordionBody() {
+type BodyPropsType={
+    items:Array<TitleProps>
+}
+
+function AccordionBody({items,...props}:BodyPropsType) {
     console.log('AccordionBody rendering')
     return (
-
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {
+                items.map(i=><li>{i.title}</li>)
+            }
         </ul>
 
     )
 }
 
-export default Accordion;
+export default React.memo(Accordion);

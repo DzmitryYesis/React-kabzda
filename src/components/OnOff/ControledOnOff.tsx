@@ -5,7 +5,7 @@ type OnOffType = {
     setSwet:()=>void
 }
 
-function OnOff({on,setSwet,...props}: OnOffType) {
+function ContrOnOff({on,setSwet,...props}: OnOffType) {
 
     const onStyle = {
         width: '30px',
@@ -33,7 +33,7 @@ function OnOff({on,setSwet,...props}: OnOffType) {
         marginLeft: '5px',
         background: on ? 'green' : 'red'
     }
-
+    console.log("ContrOnnOff")
     return (
         <div>
             <div style={onStyle} onClick={setSwet}>
@@ -47,4 +47,4 @@ function OnOff({on,setSwet,...props}: OnOffType) {
     )
 }
 
-export default OnOff
+export default React.memo(ContrOnOff)

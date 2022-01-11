@@ -29,4 +29,4 @@ type StarPropsType = {
 const Star: React.FC<StarPropsType> = (props) =>
     <span onClick={props.setValue}>{props.selected ? <b>star </b> : 'star '}</span>
 
-export default Rating;
+export default React.memo(Rating);
