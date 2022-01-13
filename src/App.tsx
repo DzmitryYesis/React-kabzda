@@ -7,6 +7,8 @@ import UncontrolledAccordion from './components/Accordion/uncontrolledAccordion'
 import UncontrolledRating from './components/Rating/uncontrolledRating';
 import ControledOnOff from './components/OnOff/ControledOnOff';
 import {Counter} from './components/Counter/Counter';
+import UseMemoTesting from './components/UseMemoTesting/UseMemoTesting';
+import {UseMemoTesting2} from './components/UseMemoTesting/UseMemoTesting2';
 
 export type TitleProps={
     title:string
@@ -29,17 +31,19 @@ function App() {
 
     return (
         <div>
-            <OnOff/>
-            <ControledOnOff on={swet} setSwet={() => setSwet(!swet)}/>
+            {/*<OnOff/>*/}
+            {/*<ControledOnOff on={swet} setSwet={() => setSwet(!swet)}/>*/}
             {/*<UncontrolledAccordion titleValue={'Vine menu'}  />*/}
             {/*<UncontrolledAccordion titleValue={'Vodochka menu'}  />*/}
-            <UncontrolledRating/>
+            {/*<UncontrolledRating/>*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
-            <Rating value={value} setValue={setValue}/>
-            <Accordion titleValue={'Vine menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>
-            <Accordion titleValue={'Vodochka menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>
+            {/*<Rating value={value} setValue={setValue}/>*/}
+            {/*<Accordion titleValue={'Vine menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>*/}
+            {/*<Accordion titleValue={'Vodochka menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>*/}
             {/*<Counter/>*/}
+            {/*<UseMemoTesting/>*/}
+            <UseMemoTesting2/>
         </div>
     );
 }
