@@ -12,6 +12,7 @@ import {UseMemoTesting2} from './components/UseMemoTesting/UseMemoTesting2';
 import {UseCallbackTesting} from './components/UseCallback/UseCallbackTest';
 import UseStateTesting from './components/UseStateTesting/UseStateTesting';
 import UseEffectTesting from './components/UseEffectTesting/UseEffectTesting';
+import SetTimeoutTraining from './components/UseEffectTesting/SetTimeoutTraining';
 
 export type TitleProps={
     title:string
@@ -49,7 +50,8 @@ function App() {
             {/*<UseMemoTesting2/>*/}
             {/*<UseCallbackTesting/>*/}
             {/*<UseStateTesting/>*/}
-            <UseEffectTesting/>
+            {/*<UseEffectTesting/>*/}
+            <SetTimeoutTraining/>
         </div>
     );
 }
