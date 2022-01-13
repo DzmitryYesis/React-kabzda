@@ -1,42 +1,47 @@
-import {useMemo, useState} from 'react';
-import React from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 
-const UseCallbackTest = () => {
-    console.log('UseCallback')
+const BooksSecret = (props: { books: Array<string>, addBook: () => void }) => {
 
-    const [counter, setCounter] = useState(8)
-    const [users, setUsers] = useState(['Dima', 'Nastya', 'Artem', 'Elena', 'Kim'])
+    console.log('BOOKS SECRET')
+    return <div>
+        <button onClick={props.addBook}>add book</button>
+        {
+            props.books.map((b, i) => <div key={i}>{b}</div>)
+        }</div>
+};
+
+const Books = React.memo(BooksSecret)
+
+
+export const UseCallbackTesting = () => {
+    console.log('UseCallbackTesting2')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(['React', 'JS', 'CSS', 'HTML'])
+
+    // const addBooks = () => {
+    //     const newBooks = [...books, 'Angular ' + new Date().getTime()]
+    //     setBooks(newBooks)
+    // }
+    //
+    // // Использование useMemo для быстродействия отрисоки
+    //
+    // const memoBooks = useMemo(() => {
+    //     return addBooks
+    // }, [books])
+
+    // Использование useCallback для быстродействия отрисоки
+
+    const callbackBooks = useCallback(()=>{
+        const newBooks = [...books, 'Angular ' + new Date().getTime()]
+        setBooks(newBooks)
+    },[books])
 
     const newArray = useMemo(() => {
-        const newArray = users.filter(u => u.toLowerCase().indexOf('a') > -1)
-        return newArray
-    }, [users])
-
-    const addUser = () => {
-        const mewUsers = [...users, 'Sveta ' + new Date().getTime()]
-        setUsers(mewUsers)
-    }
-
+        return books.filter(b => b.toLowerCase().indexOf('a') > -1)
+    }, [books])
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
-        <button onClick={() => addUser()}>add user</button>
         {counter}
-        <Users users={newArray}/>
+        <Books books={newArray} addBook={callbackBooks}/>
     </>
-};
-
-type UserType = {
-    users:Array<string>
 }
-
-const UserSecret = (props:UserType) => {
-    return <div>(
-        props.
-        )</div>
-};
-
-const Users = React.memo(UserSecret)
-
-
-
-export default UseCallbackTest;

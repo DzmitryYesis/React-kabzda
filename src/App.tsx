@@ -9,6 +9,7 @@ import ControledOnOff from './components/OnOff/ControledOnOff';
 import {Counter} from './components/Counter/Counter';
 import UseMemoTesting from './components/UseMemoTesting/UseMemoTesting';
 import {UseMemoTesting2} from './components/UseMemoTesting/UseMemoTesting2';
+import {UseCallbackTesting} from './components/UseCallback/UseCallbackTest';
 
 export type TitleProps={
     title:string
@@ -43,7 +44,8 @@ function App() {
             {/*<Accordion titleValue={'Vodochka menu'} collapsed={collapsed} setCollapsed={setCollapsed} items={items}/>*/}
             {/*<Counter/>*/}
             {/*<UseMemoTesting/>*/}
-            <UseMemoTesting2/>
+            {/*<UseMemoTesting2/>*/}
+            <UseCallbackTesting/>
         </div>
     );
 }
