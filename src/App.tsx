@@ -10,6 +10,7 @@ import {Counter} from './components/Counter/Counter';
 import UseMemoTesting from './components/UseMemoTesting/UseMemoTesting';
 import {UseMemoTesting2} from './components/UseMemoTesting/UseMemoTesting2';
 import {UseCallbackTesting} from './components/UseCallback/UseCallbackTest';
+import UseStateTesting from './components/UseStateTesting/UseStateTesting';
 
 export type TitleProps={
     title:string
@@ -45,7 +46,8 @@ function App() {
             {/*<Counter/>*/}
             {/*<UseMemoTesting/>*/}
             {/*<UseMemoTesting2/>*/}
-            <UseCallbackTesting/>
+            {/*<UseCallbackTesting/>*/}
+            <UseStateTesting/>
         </div>
     );
 }
