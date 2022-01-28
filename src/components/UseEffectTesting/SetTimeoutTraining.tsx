@@ -23,7 +23,6 @@ const SetTimeoutTraining = () => {
         }, 1000)
     }, [])
 
-
     return <>
         Hello, counter: {counter} - fake: {fake}
         {/*<button onClick={()=>setCounter(counter+1)}>counter+</button>*/}
