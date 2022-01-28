@@ -15,6 +15,7 @@ import UseEffectTesting from './components/UseEffectTesting/UseEffectTesting';
 import SetTimeoutTraining from './components/UseEffectTesting/SetTimeoutTraining';
 import {Clock} from './components/Clock/Clock';
 import ClockWithLine from './components/Clock/ClockWithLine';
+import Cleanup from './components/UseEffectTesting/Cleanup';
 
 export type TitleProps={
     title:string
@@ -54,8 +55,9 @@ function App() {
             {/*<UseStateTesting/>*/}
             {/*<UseEffectTesting/>*/}
             {/*<SetTimeoutTraining/>*/}
-            <Clock/>
-            <ClockWithLine/>
+            {/*<Clock/>*/}
+            {/*<ClockWithLine/>*/}
+            <Cleanup/>
         </div>
     );
 }
